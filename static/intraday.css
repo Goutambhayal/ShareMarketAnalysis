@@ -1,0 +1,54 @@
+   
+  body{
+    background-color: rgb(172, 169, 167);
+    padding:0;
+    margin:0;
+  }
+  #intradayHeader{
+    background-color: darkblue;
+    color: rgb(14, 13, 13);
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+  } 
+   a{
+    color:black;
+ text-decoration:none;
+}
+.choseDay{
+    background-color:aqua;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.form{
+    margin-top: 5px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    
+    width:50vw;
+    height:auto !important;
+    margin-left:10%;
+    border : 2px solid black;
+    
+
+}
+.cal{
+ width:46vw;
+ padding:0px;
+  margin:1vw;
+  margin-left:1.75vw;
+}
+.inp{
+  width:80%;
+  margin:0;
+
+}

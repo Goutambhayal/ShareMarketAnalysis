@@ -1,0 +1,38 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day2</title>
+    <link rel="stylesheet" href="{% static 'intraday.css'%}">
+</head>
+<body>
+    <div id="intradayHeader"  >
+        <a class="choseDay" href="{% url 'intraday'%}">Enter data of day one</a>
+        <a class="choseDay" href="">Enter data of day two</a>
+        <a class="choseDay" href="{% url 'dayThree'%}">Enter data of day three</a>
+    </div>
+    <div class="form">
+        {% if error|length > 0 %}
+        <p ><h1 style="color:red">{{error.check}}</h1></p>
+        {% endif %}
+        <form method="post" action="{% url 'dayTwo' %}">
+            {% csrf_token %}
+            <h1>Enter data of day two</h1>
+            <div class="cal"><input type="text"  class="inp" value="{{companyName}}" name="companyName" placeholder="Enter company name"></div>
+            
+            <div class="cal"><input  type="number" step="any" class="inp"  value="{{initialPrice}}" name="initialPrice" placeholder="Enter gain in price today" required></div>
+            <div class="cal"><input  type="number" step="any" class="inp" value="{{maxOfGap}}" name="maxOfGap" placeholder="Enter the maxima price of  gap" required></div>
+            <div class="cal"><input  type="number" step="any" class="inp" value="{{minOfGap}}" name="minOfGap" placeholder="Enter the minima price of gap" required></div>
+            <div class="cal"><input  type="number" step="any" class="inp" value="{{finalPrice}}" name="finalPrice" placeholder="Enter the final price" required></div>
+            <div class="cal"><input  type="number" step="any" class="inp" value="{{dayHighPrice}}" name="dayHighPrice" placeholder="Enter the highest price" required></div>
+            <div class="cal"><input  type="number" step="any" class="inp" value="{{dayLowPrice}}" name="dayLowPrice" placeholder="Enter the lowest price " required></div>
+            <br>
+            <button type="submit" >submit</button>
+            
+       </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+body{
+    background-color: antiquewhite;
+    padding:0;
+    margin:0;
+        
+}
+.container{
+    width:100vw;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    
+    
+}
+.div{
+    width:50vw;
+    
+    
+    
+    font-size: large;
+    margin-top:0.5vw;
+    margin-bottom:1vw;
+    padding:1vw;
+    border:solid 0.2vw black;
+    border-radius: 2%;
+
+}
+
+.anchor{
+    text-decoration:none;
+    color: black;
+    
+    
+
+}
+
+
+

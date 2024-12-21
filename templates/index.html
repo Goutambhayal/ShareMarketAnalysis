@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homePage</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="div"><a  class="anchor" target="-blank" href="{% url 'intraday'%}">Enter Intraday Data</a></div>
+        <div class="div"><a  class="anchor" target="-blank" href="{% url 'niftyfifty'%}">Enter Niftyfifty Data</a></div>
+        <div class="div"><a  class="anchor" target="-blank" href="{% url 'banknifty'%}">Enter Banknifty Data</a></div>
+        <div class="div"><a  class="anchor" target="-blank" href="{% url 'sensex'%}">Enter Sensex Data</a></div>
+        <div class="div"><a  class="anchor" target="-blank" href="{% url 'midcapnifty'%}">Enter Midcapnifty Data</a></div>
+        
+        
+    </div>
+    
+    
+    
+</body>
+</html>

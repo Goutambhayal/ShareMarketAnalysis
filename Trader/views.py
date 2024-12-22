@@ -49,6 +49,7 @@ def dayTwo(request):
     context={}
     try:
        if request.method=='POST':
+           date = request.POST.get('date')
            companyName=(request.POST.get('companyName'))
            n=float(request.POST.get('initialPrice'))
            n2=float(request.POST.get('maxOfGap'))
@@ -68,10 +69,10 @@ def dayTwo(request):
            n6=float(request.POST.get('dayLowPrice'))
            dayLow=(n6-n1)*100/n1
            c=dayHigh-dayLow
-           if (-20<gap<=20 and c>=gap and -20<maxOfGap<=20 and maxOfGap<=dayHigh and minOfGap>dayLow and -20<minOfGap<=20 and finalGain<=20 and dayHigh<=20 and dayLow>-20):
+           if (-20<gap<=20 and c>=gap and -20<maxOfGap<=20 and maxOfGap<=dayHigh and minOfGap>=dayLow and -20<minOfGap<=20 and finalGain<=20 and dayHigh<=20 and dayLow>-20):
               with connection.cursor() as cursor:
-                 query="UPDATE intradaydata_intradata SET maximaOfGap1 = %s,minimaOfGap1 = %s,gap1 = %s,finalgain1 = %s,finalPrice1 = %s, dayHigh1=%s,dayLow1=%s WHERE companyName=%s"
-                 cursor.execute(query,[maxOfGap,minOfGap,gap,finalGain,n4,dayHigh,dayLow,companyName]) 
+                 query="UPDATE intradaydata_intradata SET maximaOfGap1 = %s,minimaOfGap1 = %s,gap1 = %s,finalgain1 = %s,finalPrice1 = %s, dayHigh1=%s,dayLow1=%s WHERE companyName=%s AND Date=%s"
+                 cursor.execute(query,[maxOfGap,minOfGap,gap,finalGain,n4,dayHigh,dayLow,companyName,date]) 
            else:
               context['error'] = {'check': "Please check data you entered"}
                    
@@ -88,6 +89,7 @@ def dayThree(request):
     context={}
     try:
        if request.method=='POST':
+           date=request.POST.get('date')
            companyName=(request.POST.get('companyName'))
            n=float(request.POST.get('initialPrice'))
            n2=float(request.POST.get('maxOfGap'))
@@ -107,10 +109,10 @@ def dayThree(request):
            n6=float(request.POST.get('dayLowPrice'))
            dayLow=(n6-n1)*100/n1
            c=dayHigh-dayLow
-           if (-20<gap<=20 and gap<=c and maxOfGap<dayHigh and minOfGap>dayLow and  -20<maxOfGap<=20 and -20<minOfGap<=20 and finalGain<=20 and dayHigh<=20 and dayLow>-20):
+           if (-20<gap<=20 and gap<=c and maxOfGap<dayHigh and minOfGap>=dayLow and  -20<maxOfGap<=20 and -20<minOfGap<=20 and finalGain<=20 and dayHigh<=20 and dayLow>-20):
               with connection.cursor() as cursor:
-                 query="UPDATE intradaydata_intradata SET maximaOfGap2 = %s,minimaOfGap2 = %s,gap2 = %s,finalgain2 = %s,finalPrice2 = %s, dayHigh2=%s,dayLow2=%s WHERE companyName=%s"
-                 cursor.execute(query,[maxOfGap,minOfGap,gap,finalGain,n4,dayHigh,dayLow,companyName]) 
+                 query="UPDATE intradaydata_intradata SET maximaOfGap2 = %s,minimaOfGap2 = %s,gap2 = %s,finalgain2 = %s,finalPrice2 = %s, dayHigh2=%s,dayLow2=%s WHERE companyName=%s AND Date=%s"
+                 cursor.execute(query,[maxOfGap,minOfGap,gap,finalGain,n4,dayHigh,dayLow,companyName,date]) 
            else:
               context['error'] = {'check': "Please check data you entered"}
            

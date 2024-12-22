@@ -20,6 +20,7 @@
         <form method="post" action="{% url 'dayTwo' %}">
             {% csrf_token %}
             <h1>Enter data of day two</h1>
+            <div class="cal"> <input type="date" class="inp"  name="date" placeholder="Enter date" required></div>
             <div class="cal"><input type="text"  class="inp" value="{{companyName}}" name="companyName" placeholder="Enter company name"></div>
             
             <div class="cal"><input  type="number" step="any" class="inp"  value="{{initialPrice}}" name="initialPrice" placeholder="Enter gain in price today" required></div>

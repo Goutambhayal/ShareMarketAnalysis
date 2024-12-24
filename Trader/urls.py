@@ -27,4 +27,5 @@ urlpatterns = [
     path('niftyfifty/', views.niftyfifty,name='niftyfifty'),
     path('dayTwo/',views.dayTwo,name='dayTwo'),
     path('dayThree/',views.dayThree,name='dayThree'),
+    path('tradeCalculation/',views.tradeCalculation,name='tradeCalculation'),
 ]

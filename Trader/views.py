@@ -123,6 +123,8 @@ def dayThree(request):
        print(f"An error occurred: {e}")  # This will log the error to the console
        raise
     return render(request,'day3.html',context)
+def tradeCalculation(request):
+   return render(request,'tradecalculation.html')
 
 def banknifty(request):
     return render(request,'banknifty.html')

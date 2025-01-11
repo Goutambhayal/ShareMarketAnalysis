@@ -14,6 +14,24 @@
         <a class="choseDay" href="{%url 'dayThree'%}">Enter data of day three</a>
         <a class="choseDay" href="">Trade Calculation</a>
     </div>
+    <div class="form">
+        <form method="post" action="{% url 'tradeCalculation' %}">
+            {% csrf_token %}
+            <h1>Enter data of company</h1>
+            <div class="cal"><input type="text"   class="inp" value="{{companyName}}" name="companyName" placeholder="Enter company name" required></div>
+            <div class="cal"><input type="text"   class="inp" name="marketCap" value="{{marketCap}}" placeholder="Enter the market cap" required></div>
+            <div class="cal"><input type="number" step="any" class="inp"  value="{{initialPrice}}" name="initialPrice" placeholder="Enter gain in price today" required></div>
+            <div class="cal"><input type="number" step="any" class="inp" value="{{maxOfGap}}" name="maxOfGap" placeholder="Enter the maxima price of  gap" required></div>
+            <div class="cal"><input type="number" step="any" class="inp" value="{{minOfGap}}" name="minOfGap" placeholder="Enter the minima price of gap" required></div>
+            <div class="cal"><input type="number" step="any" class="inp" value="{{finalPrice}}" name="finalPrice" placeholder="Enter the final price" required></div>
+            <div class="cal"><input type="number" step="any" class="inp" value="{{dayHighPrice}}" name="dayHighPrice" placeholder="Enter the highest price" required></div>
+            <div class="cal"><input type="number" step="any" class="inp" value="{{dayLowPrice}}" name="dayLowPrice" placeholder="Enter the lowest price " required></div>
+            <br>
+            <button type="submit" >submit</button>
+            
+       </form>
+
+    </div>
     
 </body>
 </html>
